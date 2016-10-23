@@ -1,29 +1,17 @@
 var React = require("react"),
-	ShapeButton = require("./Buttons.jsx");
+	MobileWeb = require("./Mobile.jsx"),
+	WebPage = require("./Webpage.jsx");
 
 module.exports = React.createClass({
-	getInitialState: function() {
-		return { action: 'none' }
-	},
-	actOnClient: function(checked, shapeName) {
-		if(checked) {	
-			this.setState({ action: shapeName });
+	selectAgent: function(agent) {
+		if(agent === 'mobile') {
+			return <MobileWeb />	
+		} else {
+			return <WebPage />	
 		}
 	},
-   render:function() {
-       return(
-		  <div className="App">
-				<div className="App-header">
-				  <h2>Mobile Web App</h2>
-				</div>
-				<div className="content">
-					<div className="buttons-container">
-						<ShapeButton sortby="categories" callbackParent={this.actOnClient} />
-						<ShapeButton sortby="colors" callbackParent={this.actOnClient} />
-					</div>
-				</div>
-		  </div>
-       )
-   } 
+	render: function() {
+		return (<div>{this.selectAgent(this.props.agent)}</div>)
+	} 
 });
 
