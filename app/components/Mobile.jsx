@@ -4,26 +4,27 @@ var React = require("react"),
 
 module.exports = React.createClass({
 	getInitialState: function() {
-		return { action: 'none' }
+		return { sort: 'categories' }
 	},
-	actOnClient: function(checked, shapeName) {
+	actOnClient: function(checked, sortBy) {
 		if(checked) {	
-			this.setState({ action: shapeName });
+			this.setState({ sort: sortBy });
+			// @TODO: add socket.io emit here to broadcast the sortBy state
 		}
 	},
 	render: function() {
 		return(
-				<div className="App">
-					<div className="App-header">
-						<h2>Mobile Web App</h2>
-					</div>
-					<div className="content">
-						<div className="buttons-container">
-							<ShapeButton sortby="categories" callbackParent={this.actOnClient} />
-							<ShapeButton sortby="colors" callbackParent={this.actOnClient} />
-						</div>
+			<div className="App">
+				<div className="App-header">
+					<h2>Mobile Web App</h2>
+				</div>
+				<div className="content">
+					<div className="buttons-container">
+						<ShapeButton sortby="categories" callbackParent={this.actOnClient} />
+						<ShapeButton sortby="colors" callbackParent={this.actOnClient} />
 					</div>
 				</div>
-			  )
+			</div>
+		  )
 	}
 });

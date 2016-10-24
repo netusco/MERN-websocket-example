@@ -57,3 +57,56 @@ body {
 	background-image: linear-gradient(to top, #EBD055, #E0C651);
 	background-color: #EBD055;
 }
+
+.shape {
+	display: inline-block;
+	margin: 1.5em;
+}
+
+.shape-list {
+	font-size: 1em;
+	margin-top: 5em;
+}
+
+.shape-list .row {
+    padding: 2em 0;
+}
+
+.triangle {
+	width: 5em; 
+	height: 5em; 
+	border-bottom: 10em solid blue; 
+	border-left: 5em solid transparent; 
+	border-right: 5em solid transparent; 
+	background: transparent !important;
+}
+
+.circle { 
+   width: 10em;
+   height: 10em;
+   background: blue; 
+   -moz-border-radius: 70px; 
+   -webkit-border-radius: 70px; 
+   border-radius: 70px;
+}
+
+.square {
+   width: 10em; 
+   height: 10em; 
+   background: blue; 
+}
+
+.polygon-blue {
+	background: blue;
+	border-bottom-color: blue;
+}
+
+.polygon-red {
+	background: red;
+	border-bottom-color: red;
+}
+
+.polygon-green {
+	background: green;
+	border-bottom-color: green;
+}

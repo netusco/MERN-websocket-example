@@ -17,21 +17,21 @@ exports.create = function (req, res, next) {
 }
 
 exports.read = function (req, res, next) {
-  Shape.findById(req.params.id, function (err, post) {
+  Shape.findById({ _id: req.params.id }, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
 }
 
 exports.update = function (req, res, next) {
-  Shape.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
+  Shape.findByIdAndUpdate({ _id: req.params.id }, req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
 }
 
 exports.delete = function (req, res, next) {
-  Shape.findByIdAndRemove(req.params.id, req.body, function (err, post) {
+  Shape.findByIdAndRemove({ _id: req.params.id }, req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });

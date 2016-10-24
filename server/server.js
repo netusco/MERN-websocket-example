@@ -15,11 +15,15 @@ mongoose.connect("mongodb://localhost/im-co-challenge")
 
 //Express request pipeline
 var app = express();
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
 app.use(express.static(path.join(__dirname, "../app/dist")));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/", shapeRoute);
-app.use("/shape", shapeRoute);
+app.use("/api", shapeRoute);
 
 app.listen(7777, function () {
     console.log("Started listening on port", 7777);
