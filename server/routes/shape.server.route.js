@@ -4,7 +4,9 @@ var express = require('express'),
 	shapeCtrl = require('../controllers/shape.server.controller'),
 	Shape = require('../models/shape.server.model');
 
-router.route('/shapes').get(shapeCtrl.getAll);
+router.route('/shapes')
+	.get(shapeCtrl.getAll)
+	.post(shapeCtrl.create);
 router.route('/shape/:id?')
 	.get(shapeCtrl.read)
 	.post(shapeCtrl.create)

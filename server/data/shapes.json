@@ -1,0 +1,41 @@
+{
+	"shapes": [
+		{ 
+			"name": "triangle", 
+			"color": "green"
+		},
+		{ 
+			"name": "triangle", 
+			"color": "red" 
+		},
+		{ 
+			"name": "circle", 
+			"color": "red" 
+		},
+		{ 
+			"name": "square", 
+			"color": "green" 
+		},
+		{ 
+			"name": "square", 
+			"color": "blue" 
+		},
+		{ 
+			"name": "circle", 
+			"color": "green" 
+		},
+		{ 
+			"name": "square", 
+			"color": "red" 
+		},
+		{ 
+			"name": "triangle", 
+			"color": "blue" 
+		},
+		{ 
+			"name": "circle", 
+			"color": "blue" 
+		}
+	]
+}
+

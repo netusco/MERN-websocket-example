@@ -6,7 +6,9 @@ module.exports = React.createClass({
 		var rowShapes = [];
 
 		for(let i=key; i<key+3; i++) {
-			rowShapes.push( <Shape info={shapes[i]} key={"shape-"+i} /> );
+			if(shapes[i]) {
+				rowShapes.push( <Shape info={shapes[i]} key={"shape-"+i} /> );
+			}
 		}
 
 		return rowShapes;
@@ -22,17 +24,16 @@ module.exports = React.createClass({
 		}
 		
 		for(let i = 0; i < shapes.length; i += 3) {
-			rowShapes.push(<div className="row">{ this.returnRow(i, shapes) }</div>);
+			rowShapes.push(<div className="normal-row" key={i}>{ this.returnRow(i, shapes) }</div>);
 		}
-				 
 
 		return rowShapes;
 	},
 	render: function() {
 		return(
-				<div className="shape-list">
-					{ this.sortShapes(this.props.sort) }
-				</div>
+			<div className="shape-list">
+				{ this.sortShapes(this.props.sort) }
+			</div>
 		)
 	}
 });

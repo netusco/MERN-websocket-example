@@ -1,7 +1,7 @@
 var dispatcher = require("../dispatcher"),
-	ShapeService = require("../services/ShapeService");
+	ShapeService = require("../services/ShapesService");
 
-function ShapeStore() {
+function shapesStore() {
     var listeners = [];
 
     function onChange(listener) {
@@ -29,5 +29,5 @@ function ShapeStore() {
     }
 }
 
-module.exports = ShapeStore();
+module.exports = shapesStore();
 

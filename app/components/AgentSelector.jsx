@@ -7,7 +7,7 @@ module.exports = React.createClass({
 		if(agent === 'mobile') {
 			return <MobileWeb />	
 		} else {
-			return <WebPage />	
+			return <WebPage shapes={this.props.shapes} />	
 		}
 	},
 	render: function() {
