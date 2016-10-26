@@ -1,4 +1,5 @@
 var React = require("react"),
+	socket = require('socket.io-client')('http://localhost:7777'),
 	ShapeButton = require("./Buttons.jsx");
 
 
@@ -9,7 +10,7 @@ module.exports = React.createClass({
 	actOnClient: function(checked, sortBy) {
 		if(checked) {	
 			this.setState({ sort: sortBy });
-			// @TODO: add socket.io emit here to broadcast the sortBy state
+			socket.emit('sortBy', sortBy);
 		}
 	},
 	render: function() {

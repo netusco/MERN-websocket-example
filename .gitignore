@@ -37,3 +37,6 @@ main.js.map
 
 # Vim files
 *.swp
+
+#bower files
+app/lib

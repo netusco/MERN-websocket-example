@@ -36,6 +36,49 @@
 			"name": "circle", 
 			"color": "blue" 
 		}
-	]
+	],
+	"sort": {
+		"category": {
+			"categoryOrder": {
+				"triangle": 0,
+				"square": 1,
+				"circle": 2	
+			},
+			"colorOrder": {
+				"red": 0,
+				"green": 1,
+				"blue": 2
+			}
+		},
+		"color": {
+			"categoryOrder": {
+				"square": 0,
+				"triangle": 1,
+				"circle": 2	
+			},
+			"colorOrder": {
+				"particularCase" : {
+					"property": "color",
+					"method": "swapShapes",
+					"args": [
+						{ 
+							"idxA": 3,
+							"idxB": 5
+					   	},
+						{ 
+							"idxA": 3,
+							"idxB": 4
+					   	},
+						{ 
+							"idxA": 7,
+							"idxB": 8
+					   	}
+					]
+				},
+				"green": 0,
+				"blue": 1,
+				"red": 2
+			}
+		}
+	}
 }
-

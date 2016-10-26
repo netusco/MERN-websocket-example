@@ -17,7 +17,13 @@ gulp.task("bundle", function () {
 });
 
 gulp.task("copy", ["bundle"], function () {
-    return gulp.src(["app/index.html","app/lib/bootstrap-css/css/bootstrap.min.css","app/css/*.css"])
+    return gulp.src([
+			"app/index.html",
+			"app/lib/mobile-detect/mobile-detect.min.js",
+			"app/lib/socket.io-client/socket.io.js", 
+			"app/lib/bootstrap-css/css/bootstrap.min.css",
+			"app/css/*.css"
+		])
         .pipe(gulp.dest("app/dist"));
 });
 
