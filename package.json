@@ -1,10 +1,16 @@
 {
-  "name": "imersivo coding challenge",
+  "name": "MEARN-websocket-example",
   "version": "1.0.0",
   "description": "this is a demo application made with react, express, mongodb and nodejs",
   "main": "index.js",
+  "engines": {
+    "node": "4.6.1",
+    "npm": "3.10.8"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"postinstall": "node node_modules/bower/bin/bower install && node node_modules/gulp/bin/gulp"
   },
   "author": "ernest conill",
   "license": "ISC",

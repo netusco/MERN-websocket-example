@@ -1,7 +1,8 @@
 var React = require("react"),
-	socket = require('socket.io-client')('http://localhost:7777'),
+	url = require('url'),
+	socket = require('socket.io-client')(url.href),
 	$ = require("jquery"),
-	resourceUrl = "http://localhost:7777/api/statistics/",
+	resourceUrl = "/api/statistics",
 	ShapeButton = require("./Buttons.jsx");
 
 

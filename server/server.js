@@ -12,7 +12,7 @@ var apiRoute = require("./routes/api.server.route");
 // Use native Node promises
 mongoose.Promise = global.Promise;
 
-mongoose.connect("mongodb://localhost/im-co-challenge")
+mongoose.connect("mongodb://heroku_rp1l71c1:dau6t1lhlu4m43h0066miqoqkj@ds033607.mlab.com:33607/heroku_rp1l71c1")
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 
@@ -60,8 +60,8 @@ app.get('/statistics', function(req, res, next) {
 });
 
 // starting server
-server.listen(7777, function () {
-    console.log("Started listening on port", 7777);
+server.listen(process.env.PORT || 7777, function () {
+    console.log("Started listening on port", process.env.PORT || 7777);
 });
 
 // catch 404 and forward to error handler

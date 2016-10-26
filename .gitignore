@@ -40,3 +40,5 @@ main.js.map
 
 #bower files
 app/lib
+
+*.orig

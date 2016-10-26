@@ -1,6 +1,7 @@
 var React = require("react"),
 	$ = require("jquery"),
-	resourceUrl = "http://localhost:7777/api/shape/";
+	url = require('url'),
+	resourceUrl = "/api/shape/";
 
 
 module.exports = React.createClass({

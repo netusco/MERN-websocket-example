@@ -1,6 +1,7 @@
 var $ = require("jquery");
 var promise = require("es6-promise");
-var resourceUrl = "http://localhost:7777/api/shapes";
+var	url = require('url');
+var resourceUrl = "/api/shapes";
 
 module.exports = {
     getShapes: function () {

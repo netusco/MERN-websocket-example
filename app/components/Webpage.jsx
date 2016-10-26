@@ -1,6 +1,7 @@
 var React = require("react"),
 	ShapeList = require("./ShapeList.jsx"),
-	socket = require('socket.io-client')('http://localhost:7777');
+	url = require('url'),
+	socket = require('socket.io-client')(url.href);
 
 
 module.exports = React.createClass({
