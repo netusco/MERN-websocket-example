@@ -1,4 +1,4 @@
-# Imersivo Coding Challenge
+# MEARN Websocket Example
 
 ## Requirements
 
