@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Statistics</title>
+  </head>
+  <body>
+    <div class="stats">
+		<h1>Shapes Statistics</h1>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Shape name</th>		
+					<th>Color</th>		
+					<th>Times Seen</th>		
+				</tr>
+			</thead>
+			<tbody>
+				<% for(var i=0; i<shapes.length; i++) { %>
+					<tr>
+						<td><%= shapes[i].name%> </td>
+						<td><%= shapes[i].color %> </td>
+						<td><%= shapes[i].seen %> </td>
+					</tr>
+				<% }; %>
+			</tbody>
+		</table>
+		<h1>Color/Category Statistics</h1>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Client</th>		
+					<th>Click Category</th>		
+					<th>Click Color</th>		
+					<th>Date/Time</th>		
+				</tr>
+			</thead>
+			<tbody>
+				<% for(var i=0; i<statistics.length; i++) { %>
+					<tr>
+						<td><%= statistics[i].agent %> </td>
+						<td><%= statistics[i].seenCat %> </td>
+						<td><%= statistics[i].seenColor %> </td>
+						<td><%= statistics[i].created %> </td>
+					</tr>
+				<% }; %>
+			</tbody>
+		</table>
+	</div>
+  </body>
+</html>

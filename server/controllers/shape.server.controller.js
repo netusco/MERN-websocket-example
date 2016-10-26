@@ -5,17 +5,23 @@ var mongoose = require('mongoose'),
 // initializing shapes
 Shape.find(function(err, shapes) {
 	if(err) console.log('error initializing shapes', err);
-	console.log(shapes.length);
 	if(shapes.length === 9) {
-		console.log('shapes already exist in db', shapes);
+		console.log(shapes.length + ' shapes already exist in db', shapes);
 		return true;
 	} else {
-		Shape.create(shapesData, function (err, post) {
+		Shape.create(shapesData.shapes, function (err, post) {
 			if(err) console.log('error initializing shapes', err);
 			console.log('created sucessfully all shapes', post);
 		});
 	}
 }) 
+
+exports.getAllForStats = function (req, res, cb) {
+	Shape.find(function(err, shapes) {
+		if (err) return cb(err);
+		return cb(null, shapes);
+	});
+}
 
 exports.getAll = function (req, res, next) {
 	Shape.find(function(err, shapes) {

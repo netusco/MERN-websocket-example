@@ -5,7 +5,7 @@ var React = require("react"),
 module.exports = React.createClass({
 	selectAgent: function(agent) {
 		if(agent === 'mobile') {
-			return <MobileWeb />	
+			return <MobileWeb agentInfo={this.props.agentInfo} />	
 		} else {
 			return <WebPage shapes={this.props.shapes} />	
 		}

@@ -2,39 +2,48 @@
 	"shapes": [
 		{ 
 			"name": "triangle", 
-			"color": "green"
+			"color": "green",
+			"seen": 0
 		},
 		{ 
 			"name": "triangle", 
-			"color": "red" 
+			"color": "red",
+			"seen": 0 
 		},
 		{ 
 			"name": "circle", 
-			"color": "red" 
+			"color": "red",
+			"seen": 0 
 		},
 		{ 
 			"name": "square", 
-			"color": "green" 
+			"color": "green",
+			"seen": 0 
 		},
 		{ 
 			"name": "square", 
-			"color": "blue" 
+			"color": "blue",
+			"seen": 0 
 		},
 		{ 
 			"name": "circle", 
-			"color": "green" 
+			"color": "green",
+			"seen": 0 
 		},
 		{ 
 			"name": "square", 
-			"color": "red" 
+			"color": "red",
+			"seen": 0 
 		},
 		{ 
 			"name": "triangle", 
-			"color": "blue" 
+			"color": "blue",
+			"seen": 0 
 		},
 		{ 
 			"name": "circle", 
-			"color": "blue" 
+			"color": "blue",
+			"seen": 0 
 		}
 	],
 	"sort": {

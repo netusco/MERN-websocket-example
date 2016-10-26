@@ -16,5 +16,5 @@ var getShapesCallback = function(shapes){
 ShapesStore.onChange(getShapesCallback);
 
 function render() {
-	ReactDOM.render(<AgentSelector shapes={_shapes} agent={agent} />, document.getElementById("container"));    
+	ReactDOM.render(<AgentSelector shapes={_shapes} agent={agent} agentInfo={md.os()} />, document.getElementById("container"));    
 }

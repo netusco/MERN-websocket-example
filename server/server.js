@@ -3,9 +3,11 @@ var http = require("http");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var path = require("path");
+var StatsCtrl = require("./controllers/statistics.server.controller");
+var ShapeCtrl = require("./controllers/shape.server.controller");
 
-//controllers
-var shapeRoute = require("./routes/shape.server.route");
+// Router
+var apiRoute = require("./routes/api.server.route");
 
 // Use native Node promises
 mongoose.Promise = global.Promise;
@@ -41,16 +43,20 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, "../app/dist")));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/api", shapeRoute);
+app.use("/api", apiRoute);
 
 app.get('/', function (req, res) {
 	res.render('index');
 });
 
 // create path for statistics
-app.get('/statistics', function(req, res) {
-	res.sendFile('statistics.html', { root: 'app/' });
-	// res.render('statistics');
+app.get('/statistics', function(req, res, next) {
+	StatsCtrl.getAll(req, res, function(err, statistics) {
+		if (err) return next(err);
+		ShapeCtrl.getAllForStats(req, res, function(err, shapes) {
+			res.render('statistics', { statistics: statistics, shapes: shapes });
+		});
+	});
 });
 
 // starting server
